@@ -1,0 +1,73 @@
+.horizontal-text {
+  border-left: 0.25em solid #187fff;
+  padding-left: 0.7em;
+  font-weight: bold;
+}
+.horizontal-desc {
+  font-size: 5px;
+  color: #cccccc;
+  margin-left: 5px;
+}
+.mt25 {
+  margin-top: 25px;
+}
+.ml5 {
+  margin-left: 5px;
+}
+.mr5 {
+  margin-right: 5px;
+}
+.ml15 {
+  margin-left: 15px;
+}
+.ml20 {
+  margin-left: 20px;
+}
+.btn-mr12 {
+  margin-right: 12px;
+}
+.btn-ml10 {
+  margin-left: 10px;
+}
+.btn-mb20 {
+  margin-bottom: 20px;
+}
+.horizontal-pl2em {
+  padding-left: 2em !important;
+}
+.horizontal-pt2em {
+  padding-top: 2em !important;
+}
+.search {
+  background-color: #ffffff;
+  padding-top: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ededed;
+}
+.wid150 {
+  width: 150px !important;
+}
+.mb-clear {
+  margin-bottom: 0 !important;
+}
+// 模态框的字数限制
+.custom-dialog {
+  .desc {
+    margin: 0 0 15px 55px;
+  }
+  .f-limit {
+    padding-bottom: 16px;
+    position: relative;
+  }
+  .c-limit {
+    top: -5px;
+    right: 10px;
+    bottom: 0;
+    position: absolute;
+    color: #999999;
+  }
+}
+.ant-modal-footer,
+.ant-modal-header {
+  text-align: center !important;
+}

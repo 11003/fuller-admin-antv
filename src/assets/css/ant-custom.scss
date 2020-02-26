@@ -1,0 +1,120 @@
+@import "var";
+/*
+*这里面是修改ant-design ui组件样式的公共样式
+*/
+.card-layout {
+  padding: 20px;
+  margin: 10px 0 0 0;
+  //border: 1px solid #e8e8e8;
+  border: none;
+  background: #ffffff;
+  &.bottom {
+    margin: 0 0 10px 0;
+  }
+}
+.card-custom {
+  margin-bottom: 10px !important;
+  &:not(:last-child) {
+    border: 1px solid #e8e8e8 !important;
+  }
+}
+
+.box-custom {
+  position: relative;
+  .box-close {
+    color: #f00;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    -webkit-transform: translate(50%, -50%);
+    -moz-transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%);
+    -o-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
+    cursor: pointer;
+  }
+}
+
+.span-wrap {
+  display: flex !important;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  padding: 5px 0;
+  line-height: 160%;
+  & > .span-item-label {
+    flex: none;
+    white-space: nowrap;
+  }
+  & > .span-item-content {
+    width: 100%;
+    flex: auto;
+    white-space: normal;
+  }
+}
+
+.is_must {
+  color: red;
+  position: relative;
+  top: 32px;
+  left: 0;
+}
+
+.ant-modal-wrap {
+  .custom-dialog {
+    .ant-modal-content {
+      .ant-modal-body {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        max-height: calc(100vh - 300px);
+        min-height: 400px;
+        overflow: hidden;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+          width: 3px;
+          height: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: #999999;
+        }
+        & > div {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.ant-tooltip .ant-tooltip-content .ant-tooltip-inner {
+  max-height: 20vh;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #d5d6ba;
+  }
+}
+.ant-steps-item {
+  .ant-steps-item-content {
+    .ant-steps-item-title {
+      cursor: pointer;
+    }
+  }
+  &.active {
+    .ant-steps-item-content {
+      .ant-steps-item-title {
+        color: #40a9ff;
+      }
+    }
+  }
+}

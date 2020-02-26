@@ -1,0 +1,170 @@
+@charset "utf-8";
+/*variable*/
+$baseFont: 14px;
+$baseRem: 192px;
+/*colors*/
+$bgGrey: #f0f2f5;
+$primary: #187fff;
+$normal: #59a6e2;
+$warning: #ff5100;
+$danger: #fc0300;
+
+$layoutSpace: 10px;
+
+/*variable*/
+
+/*function*/
+
+@function percent($n, $t) {
+  @return $n/$t * 100%;
+}
+
+@function getRem($px) {
+  @return $px / $baseRem * 1rem;
+}
+
+@function getEm($font: 14px) {
+  @return $font / $baseFont * 1em;
+}
+
+@function getFont($em: 1) {
+  @return $em * $baseFont;
+}
+
+/*mixin*/
+
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin clear-spacing {
+  font-size: 0;
+  letter-spacing: 0;
+  word-spacing: 0;
+}
+
+@mixin inline($align: middle, $fontSize: $baseFont) {
+  display: inline-block;
+  vertical-align: $align;
+  font-size: $fontSize;
+}
+
+@mixin children-inline($child: "*", $align: middle, $fontSize: $baseFont) {
+  @include clear-spacing();
+  & > #{$child} {
+    @include inline($align, $fontSize);
+  }
+}
+
+@mixin flex-box($justify, $align, $wrap: no-wrap) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: $justify;
+  -ms-flex-pack: $justify;
+  justify-content: $justify;
+  -webkit-box-align: $align;
+  -ms-flex-align: $align;
+  align-items: $align;
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+@mixin inline-flex($justify, $align, $wrap: no-wrap) {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  -webkit-box-pack: $justify;
+  -ms-flex-pack: $justify;
+  justify-content: $justify;
+  -webkit-box-align: $align;
+  -ms-flex-align: $align;
+  align-items: $align;
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+@mixin set-flex-align($align) {
+  -webkit-box-align: $align;
+  -ms-flex-align: $align;
+  align-items: $align;
+}
+
+@mixin corner-module($lt, $rt, $rb, $lb) {
+  -webkit-clip-path: polygon(
+    0% $lt,
+    $lt 0%,
+    calc(100% - #{$rt}) 0%,
+    100% $rt,
+    100% calc(100% - #{$rb}),
+    calc(100% - #{$rb}) 100%,
+    $lb 100%,
+    0% calc(100% - #{$lb})
+  );
+  clip-path: polygon(
+    0% $lt,
+    $lt 0%,
+    calc(100% - #{$rt}) 0%,
+    100% $rt,
+    100% calc(100% - #{$rb}),
+    calc(100% - #{$rb}) 100%,
+    $lb 100%,
+    0% calc(100% - #{$lb})
+  );
+}
+
+@mixin set-background(
+  $url,
+  $x: center,
+  $y: center,
+  $repeat: no-repeat,
+  $size: cover
+) {
+  background: url($url) $x $y $repeat;
+  background-size: $size;
+}
+
+@mixin justify($align: middle, $symbol: false) {
+  text-align: justify;
+  text-justify: distribute-all-lines;
+  & > * {
+    @include inline($align);
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    height: 0;
+    margin: 0;
+    display: inline-block;
+    overflow: hidden;
+  }
+  @if ($symbol) {
+    position: relative;
+    &::before {
+      content: "#{$symbol}";
+      color: currentColor;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      -webkit-transform: translate(0.5em, -50%);
+      -moz-transform: translate(0.5em, -50%);
+      -ms-transform: translate(0.5em, -50%);
+      -o-transform: translate(0.5em, -50%);
+      transform: translate(0.5em, -50%);
+    }
+  }
+}
+@mixin clearFix() {
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    clear: both;
+  }
+  *zoom: 1;
+}
