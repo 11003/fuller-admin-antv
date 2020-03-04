@@ -143,7 +143,7 @@ public function userLogout()
 public function getUserInfo()
 {
     $result = [
-        'avatar' => "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif",
+        'avatar' => "https://i.loli.net/2020/03/04/Ux6kNyCAHXTuMpt.gif",
         'introduction' => "I am a super administrator",
         'name' => "Super Admin",
         'roles' => ["admin"]
