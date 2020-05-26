@@ -154,7 +154,7 @@ public function getUserInfo()
 
 ## 🕳 可能遇到的坑
 
-- 跨域：https://blog.liuhai.fun/post.html?id=52
+- 跨域：http://blog.musclewiki.cn/post.html?id=52
 
 - 有些人可能遇到`npm WARN`类型的情况
 
