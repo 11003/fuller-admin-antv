@@ -166,4 +166,10 @@ public function getUserInfo()
 npm init -f
 ```
 
+# 类似项目
+
+Element风格：
+
+https://gitee.com/liuhaier/fuller-admin
+
 ## ❤ Start 一下作为鼓励 :)
