@@ -38,7 +38,7 @@
     "less": "^2.7.3",
     "less-loader": "^4.1.0",
     "lint-staged": "^8.1.5",
-    "node-sass": "^7.0.0",
+    "node-sass": "^7.0.3",
     "prettier": "^1.18.2",
     "sass-loader": "^7.1.0",
     "vue-cli-plugin-ant-design": "^1.0.0",
